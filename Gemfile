@@ -6,13 +6,13 @@ gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
 
 group :development do
-  gem 'sqlite3'
+  gem 'pg'
   gem 'pry-rails'
 end
 
 group :production do
   gem 'thin'
-  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Gems used only for assets and not required
