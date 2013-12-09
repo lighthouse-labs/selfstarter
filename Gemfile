@@ -5,8 +5,9 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
 
+gem 'pg'
+
 group :development do
-  gem 'pg'
   gem 'pry-rails'
 end
 
