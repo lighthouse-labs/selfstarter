@@ -124,20 +124,21 @@ h1 {
 }
 
 h2 {
-  font-family: $primary_font, $secondary_font, $tertiary_font;
+  font-family: $secondary_font, $primary_font, $tertiary_font;
   font-size: 45px;
   color: $h2_color;
   margin-bottom: 50px;
 }
 
 h4 {
+  font-family: $secondary_font, $primary_font, $tertiary_font;
   font-size: 36px;
   color: $h4_color;
   margin-bottom: 30px;
 }
 
 h5 {
-  font-family: $primary_font, $secondary_font, $tertiary_font;
+  font-family: $secondary_font, $primary_font, $tertiary_font;
   margin-bottom: 10px;
   color: $h5_color;
 }
