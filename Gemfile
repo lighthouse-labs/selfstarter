@@ -29,6 +29,8 @@ group :development, :test do
   gem 'pry-debugger'
 end
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # jQuery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
