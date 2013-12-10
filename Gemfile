@@ -5,6 +5,9 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
 
+# Mail gem
+gem 'mail'
+
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'
@@ -21,6 +24,7 @@ group :assets do
   gem 'sass-rails',   '~> 4.0.0'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass'
 end
 
 group :development, :test do

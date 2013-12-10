@@ -1,0 +1,21 @@
+<div class="modal fade in" id="new_user" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    	<div class="modal-header">
+        <button type="button" class="close button" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+			
+			<div class="modal-body">
+				<div id="new-user-form">
+					<%= form_for @user = User.new, url: user_path, remote: true do |form| %>
+						<div id="user_form_errors"></div>
+					  <%= render 'users/form', form: form, user: @user %>
+					  <%= form.submit "Submit", class: "btn btn-default blue_button small_button", disable_with: "Please wait ..." %>
+					<% end %>
+				</div>
+			</div>
+
+		</div>
+  </div>
+</div>

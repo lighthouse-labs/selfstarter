@@ -57,6 +57,7 @@
     <div id="reserve_container">
       <p id="ship_date"><%= Settings.ships %></p>
       <a href="/preorder/checkout" class="blue_button reserve"><%= Settings.call_to_action %></a>
+      <p><%= link_to "or, sign up for updates!", "#new_user", "data-toggle" => "modal" %></p><br>
       <p id="price"><%= Settings.price_human %></p>
       <p><%= Settings.dont_give_them_a_reason_to_say_no %></p>
       <%= like_button %>
@@ -65,3 +66,5 @@
   </div>
   
 </div>
+<!-- Modal -->
+<%= render 'users/modal' %>

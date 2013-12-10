@@ -6,4 +6,5 @@ Selfstarter::Application.routes.draw do
   match '/preorder/ipn'           => 'preorder#ipn', :via => :post
   match '/preorder/prefill'       => 'preorder#prefill', :via => [:get,:post]
   match '/preorder/postfill'      => 'preorder#postfill', :via => [:get,:post]
+  resource :user, only: [:create, :new]
 end

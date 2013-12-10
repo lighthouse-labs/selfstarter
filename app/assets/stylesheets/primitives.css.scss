@@ -188,6 +188,7 @@ body.lt-ie9 {
 
 .blue_button {
   display: block;
+  border: none;
   color: $button_color; /* text color */
   text-shadow: 0 -1px 1px $button-text_shadow_color; /* drop shadow */
   -moz-box-shadow:
