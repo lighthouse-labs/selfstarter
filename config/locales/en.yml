@@ -2,4 +2,70 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+
+  homepage:
+    masthead:
+      header: "Roll your own crowdfunding"
+      progress_bar:
+        backers: "backers"
+        of: "of"
+        days_left: "days left"
+      call_to_action:
+        ships: "Ships...sometime"
+        reserve: "Reserve Now"
+        cost: "It costs money!"
+        site: "You'll get this exact site. All you'll need to get started is a great product."
+    body:
+      subhead_1: "What is Selfstarter?"
+      copy_1: "Selfstarter is an open source starting point for building your own ad-hoc crowdfunding site. It was put together by Lockitron after they were turned down from Kickstarter."
+      subhead_2: "How do I use it?"
+      copy_2: "Selfstarter is a starting point for you to build your own solution. It is set up to collect reservations using Amazon Payments, but you can choose your own provider too."
+      subhead_3: "It's just a skeleton."
+      copy_3: "We've kept Selfstarter really simple, but that also means that you should beef it up with your own authentication, administration and product management code."
+      subhead_4: "Let's get started."
+      copy_4: "Most of what you need to get started is in the Readme. Selfstarter is based on Ruby on Rails, and we've tried to break up all of the different parts in a sensible fashion."
+      sub_body:
+        subhead_1: "Section 1"
+        copy_1: "Morbi tempus dapibus egestas. Nullam accumsan dolor ut purus ornare congue. Phasellus ac commodo neque. Quisque non ligula lacus, id hendrerit eros."
+        subhead_2: "Section 2"
+        copy_2: "Vivamus nec posuere mauris. Suspendisse mi sem, egestas ac tristique ac, varius ac lectus. Sed porttitor dolor adipiscing mauris sagittis."
+        subhead_3: "Section 3"
+        copy_3: "Curabitur dolor elit, placerat et malesuada et, tristique vel nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        subhead_4: "Section 4"
+        copy_4: "Curabitur ac mi elit, nec tempor odio. Nam sollicitudin, sapien sit amet elementum pretium, turpis mi fermentum nisl, ac vehicula purus lacus non velit."
+      call_to_action:
+        ships: "Ships...sometime"
+        reserve: "Reserve Now"
+      faq:
+        header: "Frequently Asked Questions"
+        question_1: "How do I set up Amazon Payments?"
+        answer_1a: "You'll need to create an Amazon Seller Central account. Afterwards, get your access key and secret key from the \'Integration\' tab on your AWS account. Click here for more info."
+        answer_1b: "Once you have your access key and secret key, head over to config/settings.yml. Change amazon_access_key and amazon_secret_key appropriately."
+        question_2: "Can I use another payments provider?"
+        answer_2: "Of course. We haven't built in support for other providers, but we recommend that you take a look at Stripe or WePay."
+        question_3: "How do I edit the FAQ?"
+        answer_3: "The faq is a partial located in app/views/preorder/homepage/_faq.html.erb The summary tag is the title, the p is the body. Make sure to add an li tag for each FAQ entry."
+        question_4: "How do I change around the images, product name, etc?"
+        answer_4: "The best way is in config/settings.yml. It has variables for several different parts, the video, the product name, the call to action button (\"Fork Now\"), and several more."
+        question_5: "How do I change the CSS?"
+        answer_5a: "Head over to app/assets/stylesheets/variables.css.scss. It makes it easy to change around the elements used throughout the HTML."
+        answer_5b: "Alternatively, you can dive right into the CSS, have a look at app/assets/stylesheets/main.css.scss."
+        question_6: "Why did you release this?"
+        answer_6: "Hardware startups are less welcome on Kickstarter than they were 6 months ago. We needed to roll our own kickstarter, so we did. Other hardware startups probably will too, so we made it easier for them by open sourcing our way of doing it."
+        question_7: "What software stack does this use?"
+        answer_7: "It's a Ruby on Rails app that makes heavy use of SCSS, Kickstarter's wonderful amazon_flex_pay gem, and a hint of CoffeeScript."
+        question_8: "How do I deploy it?"
+        answer_8a: "We recommend using Heroku. We include a Procfile for you, so all you need to do is:"
+        answer_8b: "Install the Heroku Toolbelt"
+        answer_8c: "Run heroku create in Selfstarter's folder"
+        answer_8d: "Run git push heroku master in Selfstarter's folder"
+  preorder:
+    header_1: "Checkout"
+    copy_1: "All of your payment information will be secured and stored with Amazon Payments. If you don\'t have an Amazon account, simply select \"I\'m a new Customer\" on the next page."
+    subhead_1: "When will I be charged?"
+    subhead_copy_1: "We recommend that you only charge backers when you can ship, otherwise your payment provider won\'t be happy."
+    email_entry: "Enter your email address below."
+    email_input: "Email address"
+    button: "Checkout"
+  footer:
+    copyright: "You. Made by the guys at Lockitron. MIT License."
