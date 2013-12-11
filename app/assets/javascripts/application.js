@@ -17,4 +17,6 @@
 //= require jquery.details
 //= require jquery.textchange
 //= require preorder
+//= require highcharts
+//= require highcharts/highcharts-more
 //= require_tree .
