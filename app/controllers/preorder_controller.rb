@@ -2,7 +2,9 @@ class PreorderController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => :ipn
 
   def index
+    @orders = Order.daily_count
     respond_to do |format|
+      format.json { render json: @orders }
     end
   end
 
