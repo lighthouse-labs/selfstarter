@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131210204927) do
     t.string   "status"
     t.string   "number"
     t.string   "uuid"
-    t.string   "user_id"
+    t.integer  "user_id",           limit: 255
     t.decimal  "price"
     t.decimal  "shipping"
     t.string   "tracking_number"
