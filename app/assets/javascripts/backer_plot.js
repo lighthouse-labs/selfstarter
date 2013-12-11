@@ -16,10 +16,6 @@ $(function () {
       i.setDate(i.getDate() + 1);
     }
 
-    // for(var i = 0; i < data.length; i++) {
-
-    //   daily_data.push({x: Date.parse(data[i][0]), y: data[i][1]});
-    // }
     $('#container').highcharts({
       chart: {
         type: 'area'
