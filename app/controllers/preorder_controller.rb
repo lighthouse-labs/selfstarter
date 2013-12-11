@@ -2,7 +2,8 @@ class PreorderController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => :ipn
 
   def index
-
+    respond_to do |format|
+    end
   end
 
   def checkout
