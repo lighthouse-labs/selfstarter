@@ -38,3 +38,6 @@ gem 'amazon_flex_pay'
 
 # Configuration File
 gem 'rails_config'
+
+# New wave Internationalization support for Ruby.
+gem "i18n", "~> 0.6.9"
