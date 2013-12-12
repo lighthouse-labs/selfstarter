@@ -53,24 +53,18 @@
       </div>
 
       <div class="form-row">
-        <label>
-          <span>Card Number</span>
+        <label><span>Card Number</span></label>
           <%= text_field_tag nil, nil, data: { stripe: 'number' }, size: 20 %>
-        </label>
       </div>
 
       <div class="form-row">
-        <label>
-          <span>CVC</span>
+        <label><span>CVC</span></label>
           <%= text_field_tag nil, nil, data: { stripe: 'cvc' }, size: 4 %>
-        </label>
       </div>
 
       <div class="form-row">
-        <label>
-          <span>Expiration (MM/YYYY)</span>
+        <label><span>Expiration (MM/YYYY)</span></label>
           <%= text_field_tag nil, nil, data: { stripe: 'exp-month' }, size: 2 %>
-        </label>
         <span> / </span>
         <%= text_field_tag nil, nil, data: { stripe: 'exp-year' }, size: 4 %>
       </div>
