@@ -20,11 +20,11 @@
   <div id="backing">
     <ul>
       <li class="stats" id="backers">
-        <%= number_with_delimiter Order.backers, :delimiter => "," %>
+        <div class="number"><%= number_with_delimiter Order.backers, :delimiter => "," %></div>
         <span><%= Settings.primary_stat %></span>
       </li>
-      <li class="stats">
-        <%= number_to_currency Order.revenue, :precision => 0 %>
+      <li class="stats" id="total">
+        <div class="amount"><%= number_to_currency Order.revenue, :precision => 0 %></div>
         <span>of <%= number_to_currency Settings.project_goal.to_f, :precision => 0 %></span>
       </li>
 
