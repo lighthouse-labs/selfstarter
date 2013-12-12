@@ -1,9 +1,12 @@
 class Order < ActiveRecord::Base
+  
   before_validation :generate_uuid!, :on => :create
   belongs_to :user
   belongs_to :payment_option
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
   self.primary_key = 'uuid'
+
+  after_create :welcome_email 
 
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
   def self.prefill!(options = {})
@@ -37,7 +40,7 @@ class Order < ActiveRecord::Base
       @order
     end
   end
-
+  
   def self.next_order_number
     if Order.count > 0
       Order.order("number DESC").limit(1).first.number.to_i + 1
@@ -76,4 +79,11 @@ class Order < ActiveRecord::Base
   end
 
   validates_presence_of :name, :price, :user_id
+
+  protected 
+
+  def welcome_email
+    UserMailer.order_email(self.user).deliver
+  end
+
 end
