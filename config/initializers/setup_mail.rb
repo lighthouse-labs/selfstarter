@@ -1,7 +1,6 @@
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  #:domain               => "lighthouse.com",
   :user_name            => "",
   :password             => "",
   :authentication       => "plain",

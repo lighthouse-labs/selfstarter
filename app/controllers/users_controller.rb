@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
 	def create 
 		@user = User.new(user_params)
-
 		if @success = @user.save
 			UserMailer.registration_confirmation(@user).deliver
 		end

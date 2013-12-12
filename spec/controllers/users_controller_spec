@@ -1,8 +1,0 @@
-require 'spec_helper'
-
-describe UsersController do
-	it "should successfully send a sign up email"
-	it "should successfully create a new user in the database"
-	it "should render#new on an unsuccessful creation of a user"
-	it "should test the strong params method"
-end
