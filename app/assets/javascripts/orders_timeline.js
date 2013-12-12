@@ -1,6 +1,6 @@
 $(function () {
 
-  $.getJSON('/preorder.json', function(data) {
+  $.getJSON('/admin/orders.json', function(data) {
     var daily_data = [];
     var count = data.length
     var start_date = new Date(data[0][0]);
