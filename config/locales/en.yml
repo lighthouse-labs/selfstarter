@@ -3,18 +3,23 @@
 
 en:
 
+  calls_to_action:
+    ships: "Ships...sometime"
+    reserve: "Reserve Now"
+    cost: "It costs money!"
+    site: "You'll get this exact site. All you'll need to get started is a great product."
+
+  footer:
+    # TODO: needs doing but having difficulty employing the linking
+    copyright: "You. Made by the guys at Lockitron. MIT License."
+
   homepage:
-    masthead:
-      header: "Roll your own crowdfunding"
-      progress_bar:
-        backers: "backers"
-        of: "of"
-        days_left: "days left"
-      call_to_action:
-        ships: "Ships...sometime"
-        reserve: "Reserve Now"
-        cost: "It costs money!"
-        site: "You'll get this exact site. All you'll need to get started is a great product."
+    masthead: "Selfstarter"
+    header: "Roll your own crowdfunding"
+    progress_bar:
+      backers: "backers"
+      of: "of"
+      left: "left"
     body:
       subhead_1: "What is Selfstarter?"
       copy_1: "Selfstarter is an open source starting point for building your own ad-hoc crowdfunding site. It was put together by Lockitron after they were turned down from Kickstarter."
@@ -33,9 +38,6 @@ en:
         copy_3: "Curabitur dolor elit, placerat et malesuada et, tristique vel nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
         subhead_4: "Section 4"
         copy_4: "Curabitur ac mi elit, nec tempor odio. Nam sollicitudin, sapien sit amet elementum pretium, turpis mi fermentum nisl, ac vehicula purus lacus non velit."
-      call_to_action:
-        ships: "Ships...sometime"
-        reserve: "Reserve Now"
       faq:
         header: "Frequently Asked Questions"
         question_1: "How do I set up Amazon Payments?"
@@ -59,6 +61,7 @@ en:
         answer_8b: "Install the Heroku Toolbelt"
         answer_8c: "Run heroku create in Selfstarter's folder"
         answer_8d: "Run git push heroku master in Selfstarter's folder"
+
   preorder:
     header_1: "Checkout"
     copy_1: "All of your payment information will be secured and stored with Amazon Payments. If you don\'t have an Amazon account, simply select \"I\'m a new Customer\" on the next page."
@@ -67,5 +70,3 @@ en:
     email_entry: "Enter your email address below."
     email_input: "Email address"
     button: "Checkout"
-  footer:
-    copyright: "You. Made by the guys at Lockitron. MIT License."

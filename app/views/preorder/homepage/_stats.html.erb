@@ -21,17 +21,17 @@
     <ul>
       <li class="stats" id="backers">
         <%= number_with_delimiter Order.backers, :delimiter => "," %>
-        <span><%= Settings.primary_stat %></span>
+        <span><%= I18n.t :backers, scope: [:homepage, :progress_bar] %></span>
       </li>
       <li class="stats">
         <%= number_to_currency Order.revenue, :precision => 0 %>
-        <span>of <%= number_to_currency Settings.project_goal.to_f, :precision => 0 %></span>
+        <span><%= I18n.t :of, scope: [:homepage, :progress_bar] %> <%= number_to_currency Settings.project_goal.to_f, :precision => 0 %></span>
       </li>
 
       <% if Settings.expiration_date.present? %>
         <li class="stats" id="days">
           <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
-          <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
+          <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> <%= I18n.t :left, scope: [:homepage, :progress_bar] %></span>
         </li>
       <% else %>
         <li class="stats" id="days">
@@ -55,10 +55,10 @@
     <% end %>
     
     <div id="reserve_container">
-      <p id="ship_date"><%= Settings.ships %></p>
-      <a href="/preorder/checkout" class="blue_button reserve"><%= Settings.call_to_action %></a>
-      <p id="price"><%= Settings.price_human %></p>
-      <p><%= Settings.dont_give_them_a_reason_to_say_no %></p>
+      <p id="ship_date"><%= I18n.t :ships, scope: [:calls_to_action] %></p>
+      <a href="/preorder/checkout" class="blue_button reserve"><%= I18n.t :reserve, scope: [:calls_to_action] %></a>
+      <p id="price"><%= I18n.t :cost, scope: [:calls_to_action] %></p>
+      <p><%= I18n.t :site, scope: [:calls_to_action] %></p>
       <%= like_button %>
     </div>
     

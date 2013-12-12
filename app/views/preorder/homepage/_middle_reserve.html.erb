@@ -1,6 +1,6 @@
 <div class="big_wrapper">
   <div class="wrapper center" id="middle_reserve">
-    <h2><%= Settings.ships %></h2>
-    <a href="/preorder/checkout" class="blue_button reserve"><%= Settings.middle_reserve_text %></a>
+    <h2><%= I18n.t :ships, scope: [:calls_to_action] %></h2>
+    <a href="/preorder/checkout" class="blue_button reserve"><%= I18n.t :reserve, scope: [:calls_to_action] %></a>
   </div>
 </div>
