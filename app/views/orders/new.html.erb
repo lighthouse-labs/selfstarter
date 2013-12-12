@@ -1,109 +1,120 @@
-<%= form_for @order, html: { id:'payment-form' } do |f| %>
+<div class="gray_background">
+  <div class="wrapper clearfix">
+    <div class="main_content <%= "payment_options" if Settings.use_payment_options %>">
+      <h3>Check out</h3>
+      <p>
+        All of your payment information will be secured and stored with Stripe. To order, simply fill out the form below.
+        <br>  
+      </p>
+      <%= form_for @order, html: { id:'payment-form' } do |f| %>
 
-  <div class="payment-errors">
-    <% f.object.errors.full_messages.each do |msg| %>
-      <%= msg %><br/>
-    <% end %>
-  </div>   
+      <div class="payment-errors">
+        <% f.object.errors.full_messages.each do |msg| %>
+          <%= msg %><br/>
+        <% end %>
+      </div>   
 
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+      </div>
+      <div>
+        <%= f.label :address_one %>
+        <%= f.text_field :address_one %>
+      </div>
+      <div>
+        <%= f.label :address_two %>
+        <%= f.text_field :address_two %>
+      </div>
+      <div>
+        <%= f.label :state %>
+        <%= f.text_field :state %>
+      </div>
+      <div>
+        <%= f.label :zip %>
+        <%= f.text_field :zip %>
+      </div>
+      <div>
+        <%= f.label :country %>
+        <%= f.text_field :country %>
+      </div>
+      <div>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+      </div>
+
+      <div>
+        <%= label_tag "email" %>
+        <%= text_field_tag "email" %>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Card Number</span>
+          <%= text_field_tag nil, nil, data: { stripe: 'number' }, size: 20 %>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>CVC</span>
+          <%= text_field_tag nil, nil, data: { stripe: 'cvc' }, size: 4 %>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Expiration (MM/YYYY)</span>
+          <%= text_field_tag nil, nil, data: { stripe: 'exp-month' }, size: 2 %>
+        </label>
+        <span> / </span>
+        <%= text_field_tag nil, nil, data: { stripe: 'exp-year' }, size: 4 %>
+      </div>
+      <div><%= f.submit "Submit" %></div>
+      <% end %>
+    </div>
+    <%= render 'preorder/checkout/sidebar' %>
   </div>
-  <div>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-  <div>
-    <%= f.label :address_one %>
-    <%= f.text_field :address_one %>
-  </div>
-  <div>
-    <%= f.label :address_two %>
-    <%= f.text_field :address_two %>
-  </div>
-  <div>
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
-  <div>
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
-  </div>
-  <div>
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-  <div>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
-
-  <div>
-    <%= label_tag "email" %>
-    <%= text_field_tag "email" %>
-  </div>
-
-  <div class="form-row">
-    <label>
-      <span>Card Number</span>
-      <%= text_field_tag nil, nil, data: { stripe: 'number' }, size: 20 %>
-    </label>
-  </div>
-
-  <div class="form-row">
-    <label>
-      <span>CVC</span>
-      <%= text_field_tag nil, nil, data: { stripe: 'cvc' }, size: 4 %>
-    </label>
-  </div>
-
-  <div class="form-row">
-    <label>
-      <span>Expiration (MM/YYYY)</span>
-      <%= text_field_tag nil, nil, data: { stripe: 'exp-month' }, size: 2 %>
-    </label>
-    <span> / </span>
-    <%= text_field_tag nil, nil, data: { stripe: 'exp-year' }, size: 4 %>
-  </div>
-  <div><%= f.submit "Submit" %></div>
-  
-<% end %>
+</div>
 
 
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript">
-  Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");
 
-  jQuery(function($) {
-    $('#payment-form').submit(function(event) {
-      var $form = $(this);
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+      Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");
 
-      // Disable the submit button to prevent repeated clicks
-      $form.find('button').prop('disabled', true);
+      jQuery(function($) {
+        $('#payment-form').submit(function(event) {
+          var $form = $(this);
 
-      Stripe.card.createToken($form, stripeResponseHandler);
+          // Disable the submit button to prevent repeated clicks
+          $form.find('button').prop('disabled', true);
 
-      // Prevent the form from submitting with the default action
-      return false;
-    });
-  });
-  var stripeResponseHandler = function(status, response) {
-    console.log('stripe response', response);
-    var $form = $('#payment-form');
+          Stripe.card.createToken($form, stripeResponseHandler);
 
-    if (response.error) {
-      // Show the errors on the form
-      $form.find('.payment-errors').text(response.error.message);
-      $form.find('button').prop('disabled', false);
-    } else {
-      // token contains id, last4, and card type
-      var token = response.id;
-      // Insert the token into the form so it gets submitted to the server
-      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-      // and submit
-      $form.get(0).submit();
-    }
-  };
-</script>
+          // Prevent the form from submitting with the default action
+          return false;
+        });
+      });
+      var stripeResponseHandler = function(status, response) {
+        var $form = $('#payment-form');
+
+        if (response.error) {
+          // Show the errors on the form
+          $form.find('.payment-errors').text(response.error.message);
+          $form.find('button').prop('disabled', false);
+        } else {
+          // token contains id, last4, and card type
+          var token = response.id;
+          // Insert the token into the form so it gets submitted to the server
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+          // and submit
+          $form.get(0).submit();
+        }
+      };
+    </script>
 
