@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::OrdersController do
+describe Admin::OrderTimelineController do
 
   context "get 'show'" do
     it "renders json" do

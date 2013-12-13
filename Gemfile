@@ -8,6 +8,8 @@ gem 'json', '~> 1.7.7'
 # Highcharts
 gem 'highcharts-rails'
 
+gem 'js-routes'
+
 group :development do
   gem 'sqlite3'
 end

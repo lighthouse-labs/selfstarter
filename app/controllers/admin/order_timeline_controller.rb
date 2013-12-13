@@ -1,4 +1,4 @@
-class Admin::OrdersController < Admin::BaseController
+class Admin::OrderTimelineController < Admin::BaseController
   def show
     @orders_count = Order.daily_count
     respond_to do |format|

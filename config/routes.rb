@@ -9,6 +9,6 @@ Selfstarter::Application.routes.draw do
   namespace 'admin' do
     root :to => 'dashboard#show'
     resource :dashboard, only: :show, controller: :dashboard
-    resource :orders, only: :show
+    resource :order_timeline, only: :show, controller: :order_timeline
   end
 end
