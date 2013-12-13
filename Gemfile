@@ -7,6 +7,8 @@ gem 'json', '~> 1.7.7'
 
 # Mail gem
 gem 'mail'
+gem 'bourbon'
+gem 'neat'
 
 group :development do
   gem 'sqlite3'
