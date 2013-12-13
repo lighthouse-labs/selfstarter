@@ -21,7 +21,9 @@ en:
       left: "left"
     body:
       subhead_1: "What is Selfstarter?"
-      copy_1: "Selfstarter is an open source starting point for building your own ad-hoc crowdfunding site. It was put together by Lockitron after they were turned down from Kickstarter."
+      copy_1: "Selfstarter is an open source starting point for building your own ad-hoc crowdfunding site. It was put together by %{lockitron_link} after they were %{kickstarter_link}."
+      lockitron: Lockitron
+      kickstarter: "turned down from Kickstarter"
       subhead_2: "How do I use it?"
       copy_2: "Selfstarter is a starting point for you to build your own solution. It is set up to collect reservations using Amazon Payments, but you can choose your own provider too."
       subhead_3: "It's just a skeleton."
