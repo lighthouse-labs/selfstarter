@@ -1,15 +1,15 @@
 <div class="gray_background">
   <div class="wrapper clearfix">
     <div class="main_content <%= "payment_options" if Settings.use_payment_options %>">
-      <h3>Check out</h3>
+      <h3><%= I18n.t :header_1, scope: [:preorder] %></h3>
       <p>
-        All of your payment information will be secured and stored with Amazon Payments. If you don't have an Amazon account, simply select "I'm a new Customer" on the next page.
+        <%= I18n.t :copy_1, scope: [:preorder] %>
         <br />
         <br />
         <% if Settings.use_payment_options %>
-          Select a payment option and enter your email address below.
+          <%= I18n.t :select, scope: [:preorder] %>
         <% else %>
-          Enter your email address below.
+          <%= I18n.t :email_entry, scope: [:preorder] %>
         <% end %>
 
       </p>

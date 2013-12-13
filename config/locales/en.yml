@@ -73,6 +73,10 @@ en:
     copy_1: "All of your payment information will be secured and stored with Amazon Payments. If you don\'t have an Amazon account, simply select \"I\'m a new Customer\" on the next page."
     subhead_1: "When will I be charged?"
     subhead_copy_1: "We recommend that you only charge backers when you can ship, otherwise your payment provider won\'t be happy."
+    select: "Select a payment option and enter your email address below."
     email_entry: "Enter your email address below."
     email_input: "Email address"
     button: "Checkout"
+
+    reservation:
+      
