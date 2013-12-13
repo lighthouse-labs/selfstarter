@@ -5,29 +5,40 @@
       <li class=''>
         <details class=''>
           <summary class=''><%= I18n.t :question_1, scope: [:homepage, :body, :faq] %></summary>
-          <p>You'll need to <a href="https://payments.amazon.com/sdui/sdui/accountstatus">create an Amazon Seller Central account</a>. Afterwards, get your access key and secret key from the "Integration" tab on your AWS account. <a href="https://payments.amazon.com/sdui/sdui/helpTab/Checkout-by-Amazon/Advanced-Integration-Help/Using-Your-Access-Key">Click here for more info</a>.
+          <p><%= raw I18n.t( 
+              :answer_1a, scope: [:homepage, :body, :faq], 
+                :amazon_link => link_to(I18n.t(
+                  :amazon, scope: [:homepage, :body, :faq]), 'https://payments.amazon.com/sdui/sdui/accountstatus'),
+                :info_link => link_to(I18n.t(
+                  :moreinfo, scope: [:homepage, :body, :faq]), 'https://payments.amazon.com/sdui/sdui/helpTab/Checkout-by-Amazon/Advanced-Integration-Help/Using-Your-Access-Key')) %>
           <br />
           <br />
-          Once you have your access key and secret key, head over to <code>config/settings.yml</code>. Change <code>amazon_access_key</code> and <code>amazon_secret_key</code> appropriately.</p>
+          <%= raw I18n.t(
+            :answer_1b, scope: [:homepage, :body, :faq]) %>
+          </p>
         </details>
       </li>
       <li>
         <details class=''>
           <summary><%= I18n.t :question_2, scope: [:homepage, :body, :faq] %></summary>
-          <p>Of course. We haven't built in support for other providers, but we recommend that you take a look at <a href="https://stripe.com">Stripe</a> or <a href="https://wepay.com">WePay</a>.</p>
+          <p><%= raw I18n.t(
+              :answer_2, scope: [:homepage, :body, :faq], 
+                :stripe_link => link_to(I18n.t(
+                  :stripe, scope: [:homepage, :body, :faq]), 'https://stripe.com'), 
+                :wepay_link => link_to(I18n.t(
+                  :wepay, scope: [:homepage, :body, :faq]), 'https://wepay.com')) %></p>
         </details>
       </li>
       <li>
         <details class=''>
           <summary><%= I18n.t :question_3, scope: [:homepage, :body, :faq] %></summary>
-          <p>The faq is a partial located in <code>app/views/preorder/homepage/_faq.html.erb</code> The <code>summary</code> tag is the title, the <code>p</code> is the body. Make sure to add an <code>li</code> tag for each FAQ entry.</p>
+          <p><%= raw I18n.t :answer_3, scope: [:homepage, :body, :faq] %></p>
         </details>
       </li>
       <li>
         <details class=''>
           <summary><%= I18n.t :question_4, scope: [:homepage, :body, :faq] %></summary>
-          <p>The best way is in <code>config/settings.yml</code>. It has variables for several different parts, the video, the product name, the call to action button ("Fork Now"), and several more.
-          </p>
+          <p><%= raw I18n.t :answer_4, scope: [:homepage, :body, :faq] %></p>
         </details>
       </li>
     </ul>
@@ -35,10 +46,10 @@
       <li>
         <details class=''>
           <summary><%= I18n.t :question_5, scope: [:homepage, :body, :faq] %></summary>
-          <p>Head over to <code>app/assets/stylesheets/variables.css.scss</code>. It makes it easy to change around the elements used throughout the HTML.
+          <p><%= raw I18n.t :answer_5a, scope: [:homepage, :body, :faq] %>
           <br />
           <br />
-          Alternatively, you can dive right into the CSS, have a look at <code>app/assets/stylesheets/main.css.scss</code>.</p>
+          <%= raw I18n.t :answer_5b, scope: [:homepage, :body, :faq] %></p>
         </details>
       </li>
       <li class=''>
@@ -50,17 +61,20 @@
       <li class=''>
         <details class=''>
           <summary class=''><%= I18n.t :question_7, scope: [:homepage, :body, :faq] %></summary>
-          <p>It's a Ruby on Rails app that makes heavy use of SCSS, Kickstarter's wonderful <code>amazon_flex_pay</code> gem, and a hint of CoffeeScript.</p>
+          <p><%= raw I18n.t :answer_7, scope: [:homepage, :body, :faq] %></p>
         </details>
       </li>
       <li class=''>
         <details class=''>
           <summary class=''><%= I18n.t :question_8, scope: [:homepage, :body, :faq] %></summary>
-          <p><%= I18n.t :answer_8a, scope: [:homepage, :body, :faq]
+          <p><%= I18n.t :answer_8a, scope: [:homepage, :body, :faq] %>
           <p>
-            <p>Install the <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a></p>
-            <p>Run <code>heroku create</code> in Selfstarter's folder</code></p>
-            <p>Run <code>git push heroku master</code> in Selfstarter's folder</p>
+            <p><%= raw I18n.t(
+                :answer_8b, scope: [:homepage, :body, :faq], 
+                  :heroku_link => link_to(I18n.t(
+                    :heroku, scope: [:homepage, :body, :faq]), 'https://toolbelt.heroku.com/')) %></p>
+            <p><%= raw I18n.t :answer_8c, scope: [:homepage, :body, :faq] %></p>
+            <p><%= raw I18n.t :answer_8d, scope: [:homepage, :body, :faq] %></p>
           </p>
         </details>
       </li>

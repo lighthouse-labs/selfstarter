@@ -10,8 +10,7 @@ en:
     site: "You'll get this exact site. All you'll need to get started is a great product."
 
   footer:
-    # TODO: needs doing but having difficulty employing the linking
-    copyright: "You. Made by the guys at Lockitron. MIT License."
+    copyright: "You. Made by the guys at %{lockitron}. MIT License."
 
   homepage:
     masthead: "Selfstarter"
@@ -41,26 +40,31 @@ en:
       faq:
         header: "Frequently Asked Questions"
         question_1: "How do I set up Amazon Payments?"
-        answer_1a: "You'll need to create an Amazon Seller Central account. Afterwards, get your access key and secret key from the \'Integration\' tab on your AWS account. Click here for more info."
-        answer_1b: "Once you have your access key and secret key, head over to config/settings.yml. Change amazon_access_key and amazon_secret_key appropriately."
+        answer_1a: "You'll need to %{amazon_link}. Afterwards, get your access key and secret key from the 'Integration' tab on your AWS account. %{info_link}."
+        amazon: "create an Amazon Seller Central account"
+        moreinfo: "Click here for more info"
+        answer_1b: "Once you have your access key and secret key, head over to <code>config/settings.yml</code>. Change <code>amazon_access_key</code> and <code>amazon_secret_key appropriately</code>."
         question_2: "Can I use another payments provider?"
-        answer_2: "Of course. We haven't built in support for other providers, but we recommend that you take a look at Stripe or WePay."
+        answer_2: "Of course. We haven't built in support for other providers, but we recommend that you take a look at %{stripe_link} or %{wepay_link}."
+        stripe: "Stripe"
+        wepay: "WePay"
         question_3: "How do I edit the FAQ?"
-        answer_3: "The faq is a partial located in app/views/preorder/homepage/_faq.html.erb The summary tag is the title, the p is the body. Make sure to add an li tag for each FAQ entry."
+        answer_3: "The faq is a partial located in <code>app/views/preorder/homepage/_faq.html.erb</code>. The <code>summary</code> tag is the title, the <code>p</code> is the body. Make sure to add an <code>li</code> tag for each FAQ entry."
         question_4: "How do I change around the images, product name, etc?"
-        answer_4: "The best way is in config/settings.yml. It has variables for several different parts, the video, the product name, the call to action button (\"Fork Now\"), and several more."
+        answer_4: "The best way is in <code>config/settings.yml</code>. It has variables for several different parts, the video, the product name, the call to action button (\"Fork Now\"), and several more."
         question_5: "How do I change the CSS?"
-        answer_5a: "Head over to app/assets/stylesheets/variables.css.scss. It makes it easy to change around the elements used throughout the HTML."
-        answer_5b: "Alternatively, you can dive right into the CSS, have a look at app/assets/stylesheets/main.css.scss."
+        answer_5a: "Head over to <code>app/assets/stylesheets/variables.css.scss</code>. It makes it easy to change around the elements used throughout the HTML."
+        answer_5b: "Alternatively, you can dive right into the CSS, have a look at <code>app/assets/stylesheets/main.css.scss</code>."
         question_6: "Why did you release this?"
         answer_6: "Hardware startups are less welcome on Kickstarter than they were 6 months ago. We needed to roll our own kickstarter, so we did. Other hardware startups probably will too, so we made it easier for them by open sourcing our way of doing it."
         question_7: "What software stack does this use?"
-        answer_7: "It's a Ruby on Rails app that makes heavy use of SCSS, Kickstarter's wonderful amazon_flex_pay gem, and a hint of CoffeeScript."
+        answer_7: "It's a Ruby on Rails app that makes heavy use of SCSS, Kickstarter's wonderful <code>amazon_flex_pay</code> gem, and a hint of CoffeeScript."
         question_8: "How do I deploy it?"
         answer_8a: "We recommend using Heroku. We include a Procfile for you, so all you need to do is:"
-        answer_8b: "Install the Heroku Toolbelt"
-        answer_8c: "Run heroku create in Selfstarter's folder"
-        answer_8d: "Run git push heroku master in Selfstarter's folder"
+        answer_8b: "Install the %{heroku_link}"
+        heroku: "Heroku Toolbelt"
+        answer_8c: "Run <code>heroku create</code> in Selfstarter's folder"
+        answer_8d: "Run <code>git push heroku master</code> in Selfstarter's folder"
 
   preorder:
     header_1: "Checkout"
