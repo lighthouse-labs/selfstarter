@@ -9,6 +9,7 @@ gem 'pg'
 
 group :development do
   gem 'pry-rails'
+  gem 'sqlite3'
 end
 
 group :production do
@@ -27,6 +28,8 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'
+  gem 'pry-rails'
+  gem 'pry-debugger'
 end
 
 # jQuery
