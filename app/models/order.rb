@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   belongs_to :payment_option
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
+  scope :daily_count, -> { group('date(created_at)').pluck('date(created_at) as DATE', 'count(number) AS count') }
   self.primary_key = 'uuid'
 
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
