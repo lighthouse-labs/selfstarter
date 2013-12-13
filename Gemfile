@@ -9,6 +9,8 @@ gem 'json', '~> 1.7.7'
 gem 'highcharts-rails'
 
 gem 'js-routes'
+gem 'bourbon'
+gem 'neat'
 
 group :development do
   gem 'sqlite3'
@@ -28,6 +30,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'
   gem 'factory_girl_rails'

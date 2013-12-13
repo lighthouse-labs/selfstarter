@@ -8,8 +8,10 @@
   </head>
   <!--[if lt IE 9 ]><body class="lt-ie9"><![endif]-->
   <!--[if (gt IE 9)|!(IE)]><!--> <body class="<%= yield :body_class %>"><!--<![endif]-->
+  <div class="container">
     <%= render 'preorder/header' %>
     <%= yield %>
     <%= render 'preorder/footer' %>
+  </div>
   </body>
 </html>
