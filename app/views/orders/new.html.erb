@@ -2,12 +2,10 @@
   <div class="wrapper clearfix">
     <div class="main_content <%= "payment_options" if Settings.use_payment_options %>">
       <h3>Check out</h3>
-      <p>
-        All of your payment information will be secured and stored with Stripe. To order, simply fill out the form below.
-        <br>  
+      <p>All of your payment information will be secured and stored with Stripe. To order, simply fill out the form below.<br />  
       </p>
+      
       <%= form_for @order, html: { id:'payment-form' } do |f| %>
-
       <div class="payment-errors">
         <% f.object.errors.full_messages.each do |msg| %>
           <%= msg %><br/>
