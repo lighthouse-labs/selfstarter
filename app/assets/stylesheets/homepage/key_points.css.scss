@@ -24,26 +24,21 @@ h3 {
     line-height: 1.5;
 }
 
-#one {
-  background: url(image_path("1-background.png")) no-repeat bottom left;
-  height: 320px;
-  width: 936px;
+.one_image, .two_image {
+  img {
+    width: 100%;
+  }
 }
 
-#two {
-  background: url(image_path("2-background.png")) no-repeat bottom left;
-  height: 320px;
-}
+// #three {
+//   background: url(image_path("3-background.png")) no-repeat bottom left;
+//   height: 320px;
+// }
 
-#three {
-  background: url(image_path("3-background.png")) no-repeat bottom left;
-  height: 320px;
-}
-
-#four {
-  background: url(image_path("4-background.png")) no-repeat bottom left;
-  height: 320px;
-}
+// #four {
+//   background: url(image_path("4-background.png")) no-repeat bottom left;
+//   height: 320px;
+// }
 
 .right {
   margin-left: 500px;
