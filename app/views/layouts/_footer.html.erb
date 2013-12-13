@@ -2,21 +2,21 @@
   <div class="wrapper clearfix">
     <ul>
       <li>
-        <a href="#">/faq">Help & FAQs</a>
+        <a href="#">/faq"><%= I18n.t :faq, scope: [:footer] %></a>
       </li>
       <li>
-        <a href="#">Press & Media</a>
+        <a href="#"><%= I18n.t :press, scope: [:footer] %></a>
       </li>
       <li>
-        <a href="http://blog.lockitron.com/">Blog</a>
+        <a href="http://blog.lockitron.com/"><%= I18n.t :blog, scope: [:footer] %></a>
       </li>
       <li>
-        <a href="#">Privacy Policy</a>
+        <a href="#"><%= I18n.t :policy, scope: [:footer] %></a>
       </li>
       <li>
-          <a href="/account/login">Login</a>
+        <a href="/account/login"><%= I18n.t :login, scope: [:footer] %></a>
       </li>
     </ul>
-    <p>© 2009-2012 Apigy Inc. All rights reserved. Patents pending.</p>
+    <p><%= I18n.t :rights, scope: [:footer] %></p>
   </div>
 </div>

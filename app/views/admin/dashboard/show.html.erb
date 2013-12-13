@@ -1,1 +1,1 @@
-<p>There are a total of <%= @orders.count %> backers.</p>
+<p><%= I18n.t :total_backers_1, scope: [:admin] %> <%= @orders.count %> <%= :total_backers_2, scope: [:admin] %></p>

@@ -11,6 +11,12 @@ en:
 
   footer:
     copyright: "You. Made by the guys at %{lockitron}. MIT License."
+    faq: "Help & FAQs"
+    press: "Press & Media"
+    blog: "Blog"
+    policy: "Privacy Policy"
+    login: "Login"
+    rights: "© 2009-2012 Apigy Inc. All rights reserved. Patents pending."
 
   homepage:
     masthead: "Selfstarter"
@@ -78,5 +84,23 @@ en:
     email_input: "Email address"
     button: "Checkout"
 
-    reservation:
-      
+  reservation:
+    reserved: "Hooray! You've just reserved"
+    backer_num_1: "Congratulations, you're"
+    backer_num_2: "number"
+    backer_num_3: ", in supporting"
+    backer_num_4: ". Share the great news!"
+    res_id_1: "Reservation ID:"
+    res_id_2: ". You can bookmark or print this page for your records."
+
+  admin:
+    total_backers_1: "There are a total of"
+    total_backers_2: "backers."
+
+  payment:
+    soldout: "Sold Out"
+    limited: "Limited ("
+    of: "of"
+    remaining: "remaining)"
+  
+  product_name: "Selfstarter"
