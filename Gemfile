@@ -26,6 +26,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'
   gem 'factory_girl_rails'
