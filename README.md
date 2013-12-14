@@ -41,8 +41,11 @@ rake db:seed
 
 You are going to need to set 2 ENV variables from which the Stripe keys are loaded: STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY. Create a `.env` file in the root of your project, add your application configurations into it:
 ```shell
-STRIPE_PUBLISHABLE_KEY=YOURSTRIPEPUBLISHABLEKEYGOESHERE
-STRIPE_SECRET_KEY=YOURSTRIPESECRETKEYGOESHERE
+STRIPE_PUBLISHABLE_KEY="YOUR_STRIPE_PUBLISHABLE_KEY_GOES_HERE"
+STRIPE_SECRET_KEY="YOUR_STRIPE_SECRET_KEY_GOES_HERE"
+
+amazon_access_key="YOUR_AMAZON_ACCESS_KEY"
+amazon_secret_key="YOUR_AMAZON_SECRET_KEY"
 ```
 
 Let's get it running:
