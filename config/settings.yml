@@ -48,6 +48,8 @@ price: 	19.95
 # put code in seeds.rb, then run rake db:seed
 use_payment_options: false
 
+payment_gateway: Stripe # Amazon
+
 payment_description: "You really should change this text because people will see it on Amazon's order page!!!!!"
 
 # Amazon limits how much we can charge people with their Multi-Use tokens.
