@@ -3,8 +3,7 @@ describe Order do
   context "attributes" do
 
     # [:address_one, :address_two, :city, :country, :number, :state, :status,
-    #   :token, :transaction_id, :zip, :shipping, :tracking_number, :name,
-    #   :price, :phone, :expiration
+    #   :token, :transaction_id, :zip, :shipping, :tracking_number, :price, :phone, :expiration
     #   ].each do |property|
     #     it { should allow_mass_assignment_of property }
     #   end
@@ -27,15 +26,10 @@ describe Order do
 
       before do
         @options = {
-          name: 'marin',
           user_id: 12983,
           price: 123.12
         }
         @order = Order.prefill!(@options)
-      end
-
-      it "sets the name" do
-        @order.name.should == @options[:name]
       end
 
       it "sets user_id" do
@@ -195,7 +189,7 @@ describe Order do
     describe ".backers" do
       it "returns the number of orders with valid token / that have been postfilled" do
         Order.delete_all
-        order = Order.prefill!(name: 'marin', user_id: 1, price: 123.21)
+        order = Order.prefill!(user_id: 1, price: 123.21)
         Order.backers.should == 0
 
         Order.postfill!(callerReference: order.uuid, tokenID: '1232', expiry: '2015-12-24')
@@ -208,7 +202,6 @@ describe Order do
 
   describe "validators" do
 
-    it { should validate_presence_of :name }
     it { should validate_presence_of :price }
     it { should validate_presence_of :user_id }
 

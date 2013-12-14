@@ -8,7 +8,6 @@ class Order < ActiveRecord::Base
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
   def self.prefill!(options = {})
     @order                = Order.new
-    @order.name           = options[:name]
     @order.user_id        = options[:user_id]
     @order.price          = options[:price]
     @order.number         = Order.next_order_number
@@ -75,5 +74,5 @@ class Order < ActiveRecord::Base
     end 
   end
 
-  validates_presence_of :name, :price, :user_id
+  validates_presence_of :price, :user_id
 end
