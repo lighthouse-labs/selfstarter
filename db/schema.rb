@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131210193006) do
+ActiveRecord::Schema.define(version: 20131214043739) do
 
   create_table "orders", id: false, force: true do |t|
     t.string   "token"
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 20131210193006) do
     t.decimal  "shipping"
     t.string   "tracking_number"
     t.string   "phone"
-    t.string   "name"
     t.date     "expiration"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "payment_option_id"
+    t.string   "stripe_token"
   end
 
   create_table "payment_options", force: true do |t|
