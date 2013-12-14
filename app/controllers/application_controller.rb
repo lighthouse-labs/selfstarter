@@ -4,12 +4,16 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    I18n.locale = extract_locale_from_tld || I18n.default_locale
+    I18n.locale = extract_locale_from_subdomain
   end
 
   def extract_locale_from_subdomain
     parsed_locale = request.subdomains.first
-    I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+    if parsed_locale.nil?
+      I18n.default_locale
+    else
+      I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+    end
   end
 
 end
