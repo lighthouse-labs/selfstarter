@@ -14,8 +14,9 @@ FactoryGirl.define do
       address_one { Faker::Address.street_address }
       address_two { Faker::Address.secondary_address }
       phone { Faker::PhoneNumber.cell_phone }
-    factory :completed_order do
-    	token "123456"
+      factory :completed_order do
+      	token "123456"
+      end
     end
   end
 end
