@@ -104,3 +104,5 @@ en:
     remaining: "remaining)"
   
   product_name: "Selfstarter"
+  product_description: "a set of widgets"
+  progress: "Implemented"
