@@ -33,7 +33,10 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-debugger'
+  gem 'dotenv-rails'
 end
+
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # jQuery
 gem 'jquery-rails'

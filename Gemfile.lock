@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: f369ca16f956979d7e2a68242399417197f43168
+  specs:
+    stripe (1.9.9)
+      mime-types (~> 1.25)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,6 +61,9 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.4)
     diff-lcs (1.2.5)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -169,6 +181,7 @@ DEPENDENCIES
   amazon_flex_pay
   bourbon
   coffee-rails (~> 4.0.0)
+  dotenv-rails
   factory_girl_rails
   faker
   jquery-rails
@@ -184,5 +197,6 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   shoulda
   sqlite3
+  stripe!
   thin
   uglifier (>= 1.0.3)

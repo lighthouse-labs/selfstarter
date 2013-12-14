@@ -3,6 +3,8 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title><%= Settings.product_name %></title>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");</script>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
   </head>
