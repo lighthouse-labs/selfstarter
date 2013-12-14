@@ -1,0 +1,27 @@
+#new_user {
+	&.success {
+		.modal-content {
+			background-color: lightgreen;
+			padding: 20px;
+			p {
+				text-align: center;
+			}
+		}
+	}
+	.button {
+		float: right;
+		font-size: 21px;
+		font-weight: bold;
+		line-height: 1;
+		color: #000;
+		margin-top: -2px;
+	}
+}
+
+#user_form_errors {
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 8px;
+	padding: 6px;
+	display: none;
+}

@@ -6,8 +6,11 @@ Selfstarter::Application.routes.draw do
   match '/preorder/ipn'           => 'preorder#ipn', :via => :post
   match '/preorder/prefill'       => 'preorder#prefill', :via => [:get,:post]
   match '/preorder/postfill'      => 'preorder#postfill', :via => [:get,:post]
+  resource :user, only: [:create, :new]
+
   namespace 'admin' do
     root :to => 'dashboard#show'
     resource :dashboard, only: :show, controller: :dashboard
   end
+
 end

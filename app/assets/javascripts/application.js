@@ -17,4 +17,6 @@
 //= require jquery.details
 //= require jquery.textchange
 //= require preorder
+//= require bootstrap/modal
+//= require bootstrap/transition
 //= require_tree .

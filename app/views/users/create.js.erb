@@ -1,0 +1,6 @@
+<% if @success %>
+	$('#new_user').addClass('success').find('.modal-content').html('<p>Thank you for signing up. We\'ll keep you posted!');
+	setTimeout(function() { $('#new_user').modal('hide'); }, 1200);
+<% else %> 
+	$('#user_form_errors').html('<%= escape_javascript(render('form_errors', user: @user)) %>').slideDown('fast');
+<% end %>
