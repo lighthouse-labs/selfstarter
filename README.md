@@ -39,7 +39,7 @@ If you're using the payment options component (use_payment_options = true in set
 rake db:seed
 ```
 
-You are going to need to set 2 ENV variables from which the Stripe keys are loaded: STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY. Create a `.env` file in the root of your project, add your application configurations into it:
+You are going to need to set 4 ENV variables from which the Stripe keys are loaded: STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY, amazon_access_key, amazon_secret_key. Create a `.env` file in the root of your project, add your application configurations into it:
 ```shell
 STRIPE_PUBLISHABLE_KEY="YOUR_STRIPE_PUBLISHABLE_KEY_GOES_HERE"
 STRIPE_SECRET_KEY="YOUR_STRIPE_SECRET_KEY_GOES_HERE"
