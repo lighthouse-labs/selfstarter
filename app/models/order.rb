@@ -5,6 +5,11 @@ class Order < ActiveRecord::Base
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
   self.primary_key = 'uuid'
 
+  # Validations
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :user_id, presence: true
+
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
   def self.prefill!(options = {})
     @order                = Order.new
@@ -75,5 +80,4 @@ class Order < ActiveRecord::Base
     end 
   end
 
-  validates_presence_of :name, :price, :user_id
 end
